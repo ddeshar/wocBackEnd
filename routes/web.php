@@ -41,9 +41,9 @@ Route::get('/', function () {
         ], function() {
         
         Route::get('/', 'HomeController@index')->name('admin');
-        // Route::get('/login', function () {
-        //     return view('backend/login');
-        // });
-
         Route::get('/home', 'HomeController@index')->name('home');
+        
+        Route::resource('roles','RoleController');
+        Route::resource('users','UserController');
+        Route::resource('permissions', 'PermissionController');
     });
