@@ -46,5 +46,4 @@ Route::get('/', function () {
         Route::resource('roles','RoleController');
         Route::resource('users','UserController');
         Route::resource('permissions', 'PermissionController');
-
     });
