@@ -18,7 +18,7 @@
         </li> -->
 
         @foreach(Wocmenu::GenerateMenu(2) as $key => $category)
-            <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">{{ $category->title_th }}</span></a>
+            <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">{{ $category->title }}</span></a>
                 <!-- @if(count($category->childs))
                     @include('backend._layouts._includes.manageChild',['childs' => $category->childs])
                 @endif -->
