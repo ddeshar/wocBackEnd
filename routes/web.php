@@ -46,4 +46,7 @@ Route::get('/', function () {
         Route::resource('roles','RoleController');
         Route::resource('users','UserController');
         Route::resource('permissions', 'PermissionController');
+
+        Route::get('menus',['uses'=>'MenuController@manageCategory']);
+        Route::post('add-menu',['as'=>'add.category','uses'=>'MenuController@addCategory']);
     });
