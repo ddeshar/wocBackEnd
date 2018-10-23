@@ -46,4 +46,9 @@ Route::get('/', function () {
         Route::resource('roles','RoleController');
         Route::resource('users','UserController');
         Route::resource('permissions', 'PermissionController');
+        Route::resource('menu', 'MenuController');
+        Route::resource('group', 'GroupController');
+
+        // For Json Encode
+        Route::get('json-menu/{id}', 'MenuController@getGroupname')->name('jsonmenuid');
     });
