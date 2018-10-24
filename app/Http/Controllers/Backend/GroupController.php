@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class GroupController extends Controller
 {

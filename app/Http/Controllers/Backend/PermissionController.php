@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Backend;
 
 use Auth;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+
 
 //Importing laravel-permission models
 use Spatie\Permission\Models\Role;
