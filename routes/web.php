@@ -43,12 +43,20 @@ Route::get('/', function () {
         Route::get('/', 'HomeController@index')->name('admin');
         Route::get('/home', 'HomeController@index')->name('home');
         
-        Route::resource('roles','RoleController');
-        Route::resource('users','UserController');
-        Route::resource('permissions', 'PermissionController');
-        Route::resource('menu', 'MenuController');
-        Route::resource('group', 'GroupController');
+        Route::resource('roles',            'Backend\RoleController');
+        Route::resource('users',            'Backend\UserController');
+        Route::resource('permissions',      'Backend\PermissionController');
+        Route::resource('menu',             'Backend\MenuController');
+        Route::resource('group',            'Backend\GroupController');
+        Route::resource('posts',            'Backend\PostsController');
+        Route::resource('pages',            'Backend\PagesController');
+        Route::resource('setting',          'Backend\SettingsController');
 
         // For Json Encode
         Route::get('json-menu/{id}', 'MenuController@getGroupname')->name('jsonmenuid');
+
+
+    });
+    Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+        \UniSharp\LaravelFilemanager\Lfm::routes();
     });
