@@ -50,7 +50,7 @@ Route::get('/', function () {
         Route::resource('group',            'Backend\GroupController');
         Route::resource('posts',            'Backend\PostsController');
         Route::resource('pages',            'Backend\PagesController');
-        Route::resource('group',            'Backend\GroupController');
+        Route::resource('setting',          'Backend\SettingsController');
 
         // For Json Encode
         Route::get('json-menu/{id}', 'MenuController@getGroupname')->name('jsonmenuid');
