@@ -2,11 +2,7 @@
 
 @section('content')
 
-@if ($message = Session::get('success'))
-<div class="alert alert-success">
-  <p>{{ $message }}</p>
-</div>
-@endif
+    @include('backend._layouts._partial.messages._messages')
 
 <div class="row">
     <div class="col-md-12">

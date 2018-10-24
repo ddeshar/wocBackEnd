@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use DB;
 class WocglobalClass{
     public static function bytesToHuman($bytes){
         $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
@@ -28,5 +29,10 @@ class WocglobalClass{
 		$strMonthThai=$strMonthCut[$strMonth];
 		// return "$strDay $strMonthThai $strYear, $strHour:$strMinute";
 		return "$strDay $strMonthThai $strYear";
-	}
+    }
+    
+    public static function backStatus(){
+        $status = DB::table("status")->pluck("deatil","id");
+        return $status;
+    }
 }
