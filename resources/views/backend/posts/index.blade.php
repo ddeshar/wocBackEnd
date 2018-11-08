@@ -18,7 +18,8 @@
                             <tr>
                                 <th width="5%" >No</th>
                                 <th width="10%">title</th>
-                                <th width="50%">Description</th>
+                                <th width="45%">Description</th>
+                                <th width="5%">tags</th>
                                 <th width="5%" >status</th>
                                 <th width="10%">Created</th>
                                 <th width="25%">Action</th>
@@ -31,7 +32,12 @@
                             <tr>
                                 <td><?=$i?></td>
                                 <td>{{ $data->title }}</td>
-                                <td>{{ $data->description }}</td>
+                                <td>{!! $data->description !!}</td>
+                                <td>                                
+                                    @foreach($data->tags as $tag)						
+                                    <span class="badge badge-warning">{{ $tag->tag }}</span>
+                                    @endforeach
+                                </td>
 
                                 <td><span class="badge badge-primary">
                                     @if($data->status == 1)
@@ -45,7 +51,7 @@
                                 <td>{{ Wocglobal::DateThai($data->created_at) }}</td>
                                 <td>
                                     <a href="{{ route('posts.edit', $data->slug) }}" class="btn btn-primary"><i class="fa fa-cog"></i> edit</a>
-                                    {!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $data->postId],'style'=>'display:inline']) !!}
+                                    {!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $data->id],'style'=>'display:inline']) !!}
                                         {{ Form::button('<i class="fa fa-trash"></i>  Delete', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
                                     {!! Form::close() !!}
                                 </td>
