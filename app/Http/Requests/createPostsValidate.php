@@ -34,7 +34,7 @@ class createPostsValidate extends FormRequest{
 
     private function getPutRules(){
         $rules = $this->rules;
-        $rules['slug'] = 'required|unique:posts,slug,' .$this->getSegmentFromEnd().',postId';
+        $rules['slug'] = 'required|unique:posts,slug,' .$this->getSegmentFromEnd().',id';
         return $rules;
     }
 
