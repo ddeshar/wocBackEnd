@@ -121,8 +121,8 @@
                             {!! Form::label('active', 'เปิดการใช้งาน') !!}
                             {!! Form::select('active', $active, isset($item->active) ? $item->active : null, ['class' => 'form-control', 'id' => 'active']) !!}
 
-                            @if($errors->has('parent'))
-                                <span class="text-danger">{{ $errors->first('parent') }}</span>
+                            @if($errors->has('active'))
+                                <span class="text-danger">{{ $errors->first('active') }}</span>
                             @endif
                         </div>
 
@@ -138,12 +138,11 @@
                         <div class="form-group">
                             {!! Form::label('parent', 'เลือกกลุ่มเมนู') !!}
                             <select name="parent" id="parent" class="form-control">
+                                <option value="">เลือกกลุ่มเมนู</option>
                                 @if(isset($item))
                                     @foreach($selectMenu as $key => $value)
                                         <option value="{{$key}}" @if(isset($item) && $item->parent === $key) selected="selected" @endif >{{$value}}</option>
                                     @endforeach
-                                @else
-                                    <option>เลือกกลุ่มเมนู</option>
                                 @endif
                             </select>
 
