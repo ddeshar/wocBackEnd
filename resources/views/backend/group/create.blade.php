@@ -44,7 +44,7 @@
             <div class="col-md-3">
                 <div class="card card-primary card-outline">
                     <div class="card-header p-2">
-                        <p>Setting</p>
+                        <p class="backHeader">Setting</p>
                     </div>
                     
                     <div class="card-footer">
