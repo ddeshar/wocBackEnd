@@ -21,7 +21,7 @@
                         
                         <div class="form-group">
                             {!! Form::label('description', 'รายละเอียด (TH)', ['class' => 'control-label']) !!}
-                            {!! Form::textarea('description',  isset($datas->description) ? $datas->description : null, ['class' => 'form-control', 'id' => 'ckeditor', 'rows' => '14']); !!}
+                            {!! Form::textarea('description',  isset($datas->description) ? $datas->description : null, ['class' => 'form-control', 'id' => 'newa', 'rows' => '14']); !!}
                         </div>
 
                         <div class="form-group">
@@ -92,14 +92,23 @@
 
                 <div class="form-group">
                     {!! Form::label('status', 'สถานะ') !!}
-                    {!! Form::select('status', Wocglobal::backStatus(), $datas->status, array('class' => 'form-control', 'id' => 'status')); !!}
+                    {!! Form::select('status', Wocglobal::backStatus(), $datas->status, ['class' => 'form-control', 'id' => 'status']); !!}
                 </div>
 
                 <div class="form-group">
                     {!! Form::label('slug', 'slug:', ['class' => 'control-label']) !!}
                     {!! Form::text('slug', $datas->slug, ['class' => 'form-control', 'id' => 'slug', 'placeholder' => 'URL slug', 'readonly' => 'true']) !!}
-                </div> 
+                </div>
+                
+                <div class="form-group">
+                    {!! Form::label('category_id', 'Post Category') !!}
+                    {!! Form::select('category_id', $categories, $datas->category_id, ['class' => 'form-control', 'id' => 'select']); !!}
+                </div>
 
+                <div class="form-group">
+                    {!! Form::label('tags', 'Select tags :', ['class' => 'control-label']) !!}
+                    {!! Form::select('tags[]', $tags, isset($postTags) ? $postTags : [], ['class' => 'form-control','id' => 'demoSelect', 'multiple','tabindex'=>'-1', 'aria-hidden'=>'true']) !!}
+                </div>
             </div>
         
             <div class="card-footer">
