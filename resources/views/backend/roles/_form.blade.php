@@ -27,7 +27,7 @@
                     <div class="col-md-3">
                         <div class="card card-success card-outline">
                         <div class="card-header">
-                            <h3 class="card-title">{{ $key }}</h3>
+                            <p class="backHeader">{{ $key }}</p>
                         </div>
                         <div class="card-body">
                             <div class="checkbox">

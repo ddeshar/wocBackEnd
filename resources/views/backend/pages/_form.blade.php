@@ -116,7 +116,7 @@
         <div class="card card-primary card-outline">
 
             <div class="card-header p-2">
-                <p>การตั้งค่า</p>
+                <p class="backHeader">การตั้งค่า</p>
             </div><!-- /.card-header -->
             <div class="card-body">
 
