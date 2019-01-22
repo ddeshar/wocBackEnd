@@ -20,6 +20,21 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700" rel="stylesheet">
+
+    <style>
+      .backHeader{
+        font-size: 1.2rem;
+        font-family: Kanit;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 0;
+      }
+      .nav-link {
+        font-family: Kanit;
+      }
+    </style>
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @yield('header_styles')
