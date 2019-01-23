@@ -22,7 +22,7 @@
             @endif
         </ul>
 
-        <a href="{{ route('users.edit',$user->id) }}" class="btn btn-primary btn-block"><b>Edit</b></a>
+        <a href="{{ route('users.edit',$user->id) }}" class="btn btn-primary btn-block"><b>{{ __('WocAdmin.edit')}}</b></a>
     </div>
     <!-- /.card-body -->
 </div>

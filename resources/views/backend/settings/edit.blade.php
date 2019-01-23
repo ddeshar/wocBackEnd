@@ -37,11 +37,11 @@
 
                                 @elseif($setting->type == "image" || $setting->type == "file")
                                     <div class="form-group">
-                                        {!! Form::label("avatar","Thai") !!}
+                                        {!! Form::label("avatar","picture") !!}
                                         <div class="input-group">
                                             <span class="input-group-btn">
                                                 <a id="img1" data-input="thumbnail4" data-preview="imgth" class="btn btn-primary">
-                                                <i class="fa fa-picture-o"></i> Picture_th
+                                                <i class="fa fa-picture-o"></i> Picture
                                                 </a>
                                             </span>
                                             {!! Form::text('value', $setting->value,  ['class' => 'form-control', 'id' => 'thumbnail4']) !!}

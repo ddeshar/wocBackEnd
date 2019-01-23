@@ -8,19 +8,19 @@
         <div class="col-12">
             <div class="tile">
                 <div class="tile-title-w-btn">
-                    <h3 class="title">Posts</h3>
-                    <p><a class="btn btn-primary icon-btn" href="{{ route('posts.create') }}"><i class="fa fa-plus"></i>Create posts</a></p>
+                    <h3 class="title"> {{ __('WocAdmin.posts') }} </h3>
+                    <p><a class="btn btn-primary icon-btn" href="{{ route('posts.create') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.createPosts') }} </a></p>
                 </div>
                 <!-- /.card-header -->
                 <div class="tile-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th width="5%" >No</th>
-                                <th width="55%">title</th>
-                                <th width="5%" >status</th>
-                                <th width="10%">Created</th>
-                                <th width="25%">Action</th>
+                                <th width="5%" > {{ __('WocAdmin.No') }} </th>
+                                <th width="55%"> {{ __('WocAdmin.title') }} </th>
+                                <th width="5%" > {{ __('WocAdmin.status') }} </th>
+                                <th width="10%"> {{ __('WocAdmin.Created') }} </th>
+                                <th width="25%"> {{ __('WocAdmin.Action') }} </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -32,17 +32,19 @@
                                 <td>{{ $data->title }}</td>
                                 <td><span class="badge badge-primary">
                                     @if($data->status == 1)
-                                        published
+                                        {{ __('WocAdmin.published') }}
                                     @elseif($data->status == 2)
-                                        draft
+                                        {{ __('WocAdmin.draft') }}
                                     @endif
                                 </span></td>
                                 <td>{{ Wocglobal::DateThai($data->created_at) }}</td>
                                 <td>
-                                    <a href="{{ route('posts.edit', $data->slug) }}" class="btn btn-primary"><i class="fa fa-cog"></i> edit</a>
-                                    {!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $data->id],'style'=>'display:inline']) !!}
-                                        {{ Form::button('<i class="fa fa-trash"></i>  Delete', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
-                                    {!! Form::close() !!}
+                                    <div class="btn-group">
+                                        <a class="btn btn-primary" href="{{ route('posts.edit',$data->slug) }}"><i class="fa fa-lg fa-edit"></i></a>
+                                        {!! Form::open(['method' => 'DELETE','route' => ['posts.destroy', $data->id],'style'=>'display:inline']) !!}
+                                            {!! Form::button('<i class="fa fa-lg fa-trash"></i>', ['class'=>'btn btn-danger', 'type'=>'submit']) !!}
+                                        {!! Form::close() !!}
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach   

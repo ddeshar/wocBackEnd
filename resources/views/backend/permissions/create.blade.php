@@ -7,16 +7,16 @@
 <div class="row">
     <div class="col-md-12">
         <div class="tile">
-            <h3 class="tile-title">Add Permission</h3>
+            <h3 class="tile-title">{{ __('WocAdmin.CreatePer') }}</h3>
 
             {!! Form::open(['route' => 'permissions.store','method'=>'POST']) !!}
 
                 <div class="form-group">
-                    {{ Form::label('name', 'Name') }}
+                    {{ Form::label('name', __('WocAdmin.Name')) }}
                     {{ Form::text('name', '', array('class' => 'form-control')) }}
                 </div><br>
                 @if(!$roles->isEmpty())<!-- //If no roles exist yet -->
-                    <h4>Assign Permission to Roles</h4>
+                    <h4> {{ __('WocAdmin.assignPerToRoles') }} </h4>
 
                     @foreach ($roles as $role) 
                         {{ Form::checkbox('roles[]',  $role->id ) }}
@@ -25,7 +25,7 @@
                     @endforeach
                 @endif
                 <br>
-                {{ Form::submit('Add', ['class' => 'btn btn-primary']) }}
+                {{ Form::submit(__('WocAdmin.Submit'), ['class' => 'btn btn-primary']) }}
 
             {{ Form::close() }}
         </div>
