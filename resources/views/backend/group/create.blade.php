@@ -20,7 +20,7 @@
                     <div class="card-body">
 
                         <div class="form-group">
-                            {!! Form::label('value', '*Group Value :', ['class' => 'control-label']) !!}
+                            {!! Form::label('value', __('WocAdmin.groupValue'), ['class' => 'control-label']) !!}
                             {!! Form::text('value', isset($group->value) ? $group->value : null,  ['class' => 'form-control', 'id' => 'value','required' => 'required']) !!}
                             
                             @if(count($errors))
@@ -29,7 +29,7 @@
                         </div>
       
                         <div class="form-group">
-                            {!! Form::label('name', '*Group Name : Note once added cant edit it', ['class' => 'control-label']) !!}
+                            {!! Form::label('name', __('WocAdmin.groupName'), ['class' => 'control-label']) !!}
                             {!! Form::text('name', isset($group->name) ? $group->name : null,  ['class' => 'form-control', 'id' => 'name','required' => 'required']) !!}
                             
                             @if(count($errors))
@@ -44,11 +44,11 @@
             <div class="col-md-3">
                 <div class="card card-primary card-outline">
                     <div class="card-header p-2">
-                        <p class="backHeader">Setting</p>
+                        <p class="backHeader"> {{ __('WocAdmin.setting') }} </p>
                     </div>
                     
                     <div class="card-footer">
-                        {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+                        {!! Form::submit(__('WocAdmin.Submit'), ['class' => 'btn btn-primary btn-lg btn-block']) !!}
                     </div>
 
                 </div>

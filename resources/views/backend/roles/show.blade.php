@@ -6,12 +6,12 @@
     <div class="col-md-12">
         <div class="tile">
             <div class="tile-title-w-btn">
-                <h3 class="title">Show Role</h3>
-                <p><a class="btn btn-primary icon-btn" href="{{ route('roles.index') }}">Back</a></p>
+                <h3 class="title"> {{ __('WocAdmin.showRole') }} </h3>
+                <p><a class="btn btn-primary icon-btn" href="{{ route('roles.index') }}"> {{ __('WocAdmin.back') }} </a></p>
             </div>
             <div class="tile-body">
                 <div class="form-group">
-                    <strong>Name:</strong>
+                    <strong> {{ __('WocAdmin.Name') }} :</strong>
                     {{ $role->name }}
                 </div>
                     <?php 
@@ -20,10 +20,10 @@
                         });
 
                         $status = [
-                            'list' => 'ดูข้อมูล',
-                            'create' => 'สร้าง',
-                            'edit' => 'แก้ไข',
-                            'delete' => 'ลบ'
+                            'list' => __('WocAdmin.listRole'),
+                            'create' => __('WocAdmin.createRole'),
+                            'edit' => __('WocAdmin.editRole'),
+                            'delete' => __('WocAdmin.deleteRole')
                         ];
                     ?>
                     <h5>Permissions:</h5>

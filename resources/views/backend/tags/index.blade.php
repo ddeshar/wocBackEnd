@@ -7,16 +7,16 @@
             <div class="card">
                 <div class="card-header">
                     <!-- <h3 class="title">tags</h3> -->
-                    <p><a class="btn btn-primary icon-btn" href="{{ route('tags.create') }}"><i class="fa fa-plus"></i>Add tags</a></p>
+                    <p><a class="btn btn-primary icon-btn" href="{{ route('tags.create') }}"><i class="fa fa-plus"></i>{{ __('WocAdmin.addTags') }}</a></p>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>Id</th>
-                                <th>tag</th>
-                                <th>Action</th>
+                                <th>{{ __('WocAdmin.No') }}</th>
+                                <th>{{ __('WocAdmin.tag') }}</th>
+                                <th>{{ __('WocAdmin.Action') }}</th>
                             </tr>
                         </thead>
                         <tbody>

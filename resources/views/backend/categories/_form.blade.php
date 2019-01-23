@@ -5,22 +5,22 @@
         <div class="card">
             <div class="card-header p-2">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a class="nav-link active" href="#Description" data-toggle="tab">รายละเอียด</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#Description" data-toggle="tab">{{ __('WocAdmin.description') }}</a></li>
                 </ul>
             </div><!-- /.card-header -->
 
             <div class="card-body">
                 <div class="form-group">
-                    {!! Form::label('parent_id', 'Category parent id') !!}
-                    {!! Form::select('parent_id', $select_Category, $Category->parent_id, array('class' => 'form-control', 'placeholder' => 'Enter your Category parent id' , 'id' => 'select')); !!}
+                    {!! Form::label('parent_id', __('WocAdmin.catParentId')) !!}
+                    {!! Form::select('parent_id', $select_Category, $Category->parent_id, array('class' => 'form-control', 'placeholder' => __('WocAdmin.catParentId'), 'id' => 'select')); !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('order', 'Category order :', ['class' => 'control-label']) !!}
-                    {!! Form::number('order', $Category->order, ['class' => 'form-control','placeholder' => 'Category order','required']) !!}
+                    {!! Form::label('order', __('WocAdmin.catOrder'), ['class' => 'control-label']) !!}
+                    {!! Form::number('order', $Category->order, ['class' => 'form-control','placeholder' => __('WocAdmin.catOrder'),'required']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('name', 'Category name :', ['class' => 'control-label']) !!}
-                    {!! Form::text('name', $Category->name, ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'Category name']) !!}
+                    {!! Form::label('name', __('WocAdmin.catName'), ['class' => 'control-label']) !!}
+                    {!! Form::text('name', $Category->name, ['class' => 'form-control', 'id' => 'title', 'placeholder' => __('WocAdmin.catName')]) !!}
                 </div>
 
             </div>
@@ -32,20 +32,20 @@
         <div class="card card-primary card-outline">
 
             <div class="card-header p-2">
-                <p class="backHeader">การตั้งค่า</p>
+                <p class="backHeader"> {{ __('WocAdmin.setting') }} </p>
             </div><!-- /.card-header -->
 
             <div class="card-body">
 
                 <div class="form-group">
-                    {!! Form::label('slug', 'Category slug :', ['class' => 'control-label']) !!}
-                    {!! Form::text('slug', $Category->slug, ['class' => 'form-control', 'id' => 'slug', 'placeholder' => 'Category slug']) !!}
+                    {!! Form::label('slug', __('WocAdmin.catSlug'), ['class' => 'control-label']) !!}
+                    {!! Form::text('slug', $Category->slug, ['class' => 'form-control', 'id' => 'slug', 'placeholder' => __('WocAdmin.catSlug')]) !!}
                 </div>
 
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('ตกลง', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+                {!! Form::submit(__('WocAdmin.Submit'), ['class' => 'btn btn-primary btn-lg btn-block']) !!}
             </div>
 
         </div>
