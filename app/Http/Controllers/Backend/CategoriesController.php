@@ -54,8 +54,11 @@ class CategoriesController extends Controller{
         return redirect()->route('categories.show', $Category->id)->with('Success','Category Update Successfully');
     }
     
-    public function destroy(Categories $Categories){
-        
+    public function destroy($id){
+        $data = Categories::find($id);
+        $data->delete();
+
+        return redirect()->back();
     }
     
 }

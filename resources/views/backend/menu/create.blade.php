@@ -113,7 +113,7 @@
                 <div class="card card-primary card-outline">
 
                     <div class="card-header p-2">
-                        <p>Setting</p>
+                        <p class="backHeader">Setting</p>
                     </div><!-- /.card-header -->
                     <div class="card-body">
                     

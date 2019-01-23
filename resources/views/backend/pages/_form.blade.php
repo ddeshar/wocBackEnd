@@ -15,12 +15,12 @@
 
                     <div class="active tab-pane" id="Description">
                         <div class="form-group">
-                            {!! Form::label('title', 'หัวเรื่อง (TH)', ['class' => 'control-label']) !!}
+                            {!! Form::label('title', 'หัวเรื่อง', ['class' => 'control-label']) !!}
                             {!! Form::text('title', $datas->title,  ['class' => 'form-control', 'id' => 'title', 'placeholder' => 'หัวเรื่อง','required' => 'required']) !!}
                         </div>
                         
                         <div class="form-group">
-                            {!! Form::label('body', 'รายละเอียด (TH)', ['class' => 'control-label']) !!}
+                            {!! Form::label('body', 'รายละเอียด', ['class' => 'control-label']) !!}
                             {!! Form::textarea('body',  isset($datas->body) ? $datas->body : null, ['class' => 'form-control', 'id' => 'newa', 'rows' => '14']); !!}
                         </div>
 
@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="col-md-12">
-                                {!! Form::label('mob', 'รูปภาพแสดงบนโทรศัพท์ (EN)', ['class' => 'control-label']) !!}
+                                {!! Form::label('mob', 'รูปภาพแสดงบนโทรศัพท์', ['class' => 'control-label']) !!}
                                 <div class="input-group">
                                     <span class="input-group-btn">
                                         <a id="mob" data-input="thumbnailmoben" data-preview="moen" class="btn btn-primary">
@@ -87,17 +87,17 @@
                     <div class="tab-pane" id="SEO">
 
                         <div class="form-group">
-                            {!! Form::label('metaTitle', 'Seo Title Th') !!}
+                            {!! Form::label('metaTitle', 'Seo Title') !!}
                             {!! Form::text('metaTitle', $datas->metaTitle , ['class' => 'form-control', 'id' => 'metaTitle', 'placeholder' => 'Seo Title']) !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('metaDescription', 'Meta Description Th') !!}
+                            {!! Form::label('metaDescription', 'Meta Description') !!}
                             {!! Form::textarea('metaDescription', $datas->metaDescription , ['class' => 'form-control', 'rows'=>'5']); !!}
                         </div>
 
                         <div class="form-group">
-                            {!! Form::label('metaKeywords', 'Meta Keywords Th') !!}
+                            {!! Form::label('metaKeywords', 'Meta Keywords') !!}
                             {!! Form::textarea('metaKeywords', $datas->metaKeywords , ['class' => 'form-control', 'rows'=>'5']); !!}
                         </div>
 
@@ -116,7 +116,7 @@
         <div class="card card-primary card-outline">
 
             <div class="card-header p-2">
-                <p>การตั้งค่า</p>
+                <p class="backHeader">การตั้งค่า</p>
             </div><!-- /.card-header -->
             <div class="card-body">
 
