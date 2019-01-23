@@ -12,3 +12,5 @@ npm-debug.log
 yarn-error.log
 .env
 .phpunit.result.cache
+public/photos/10001/lattest.png
+public/photos/10001/thumbs/lattest.png

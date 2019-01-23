@@ -38,8 +38,6 @@
                                         published
                                     @elseif($data->status == 2)
                                         draft
-                                    @elseif($data->status == 3)
-                                        pending
                                     @endif
                                 </span></td>
                                 <td>{{ Wocglobal::DateThai($data->created_at) }}</td>
