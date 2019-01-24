@@ -3,6 +3,12 @@
 
 @section('title', $title.' | E-Filing Backend')
 
+@php
+    $title = __('WocBread.settingEdit');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('header_styles')
 
 <script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>

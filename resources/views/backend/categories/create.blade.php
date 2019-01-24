@@ -1,10 +1,10 @@
 @extends('backend._layouts.master')
 
-@section('title', '')
+@php
+    $title = __('WocBread.catCreate');
+@endphp
 
-@section('header_styles')
-
-@endsection
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('content')
     {!! Form::open([ 'route' => 'categories.store', 'method' => 'POST']) !!}

@@ -1,5 +1,15 @@
 @extends('backend._layouts.master')
 
+@php
+    if(isset($group)){
+        $title = __('WocBread.groupEdit');
+    } else{
+        $title = __('WocBread.groupCreate');
+    }
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')

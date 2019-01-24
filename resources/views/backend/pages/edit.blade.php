@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.pageEdit');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('header_styles')
 <link rel="stylesheet" href="{!! url('/plugins/datetimepicker/bootstrap-datetimepicker.css') !!}">
 @endsection

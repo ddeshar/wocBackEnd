@@ -1,6 +1,10 @@
 @extends('backend._layouts.master')
 
-@section('title', '')
+@php
+    $title = __('WocBread.categories');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('content')
     <div class="row">

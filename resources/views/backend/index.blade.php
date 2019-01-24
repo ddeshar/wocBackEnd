@@ -1,8 +1,10 @@
 @extends('backend._layouts.master')
 
-@section('header_styles')
+@php
+    $title = __('WocBread.dashboard');
+@endphp
 
-@endsection
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('content')
   <div class="row">

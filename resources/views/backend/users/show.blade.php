@@ -1,5 +1,10 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.UsersShow');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('content')
 
