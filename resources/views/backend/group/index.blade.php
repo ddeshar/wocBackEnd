@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.groups');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -8,17 +14,17 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('group.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Add Group</a>
+                    <a href="{{ route('group.create') }}" class="btn btn-success"><i class="fa fa-plus"></i>  {{ __('WocAdmin.addGroup') }} </a>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     <table id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Group</th>
-                                <th>Value</th>
-                                <th>Actions</th>
+                                <th> {{ __('WocAdmin.No') }} </th>
+                                <th> {{ __('WocAdmin.group') }} </th>
+                                <th> {{ __('WocAdmin.Value') }} </th>
+                                <th> {{ __('WocAdmin.Action') }} </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -28,11 +34,12 @@
                                     <td>{{ $group->name }}</td>
                                     <td>{{ $group->value }}</td>
                                     <td>
-                                        <a class="btn btn-sm btn-info" href="{{ route('group.edit', ['id' => $group->id]) }}">Edit</a>
-                                        {!! Form::open(['method' => 'DELETE', 'route' => ['group.destroy', $group->id],'style'=>'display:inline' ]) !!}
-                                            {{ Form::button('Delete', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger'] )  }}
-                                        {!! Form::close() !!}
-
+                                        <div class="btn-group">
+                                            <a class="btn btn-primary" href="{{ route('group.edit',$group->id) }}"><i class="fa fa-lg fa-edit"></i></a>
+                                            {!! Form::open(['method' => 'DELETE','route' => ['group.destroy', $group->id],'style'=>'display:inline']) !!}
+                                                {!! Form::button('<i class="fa fa-lg fa-trash"></i>', ['class'=>'btn btn-danger', 'type'=>'submit']) !!}
+                                            {!! Form::close() !!}
+                                        </div>
                                     </td>
                                 </tr>
                             @endforeach

@@ -1,5 +1,10 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.UsersShow');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('content')
 
@@ -22,7 +27,7 @@
             @endif
         </ul>
 
-        <a href="{{ route('users.edit',$user->id) }}" class="btn btn-primary btn-block"><b>Edit</b></a>
+        <a href="{{ route('users.edit',$user->id) }}" class="btn btn-primary btn-block"><b>{{ __('WocAdmin.edit')}}</b></a>
     </div>
     <!-- /.card-body -->
 </div>

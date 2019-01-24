@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.menus');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -8,7 +14,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('menu.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Add Menu Item</a>
+                    <a href="{{ route('menu.create') }}" class="btn btn-success"><i class="fa fa-plus"></i>  {{ __('WocAdmin.addMenu') }} </a>
                 </div>
 
                 <div class="card-header p-2">
@@ -34,12 +40,12 @@
                                 <table id="example{{$i}}" class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                            <th>ลำดับที่</th>
-                                            <th>ชื่อเมนู</th>
-                                            <th>ลิ้งเชื่อมต่อ</th>
-                                            <th>ประเภทเมนู</th>
-                                            <th>เปิดใช้งาน</th>
-                                            <th>การใช้งานปุ่ม</th>
+                                            <th> {{ __('WocAdmin.No') }} </th>
+                                            <th> {{ __('WocAdmin.Name') }} </th>
+                                            <th> {{ __('WocAdmin.link') }} </th>
+                                            <th> {{ __('WocAdmin.group') }} </th>
+                                            <th> {{ __('WocAdmin.active') }} </th>
+                                            <th> {{ __('WocAdmin.Action') }} </th>
                                         </tr>
                                     </thead>
                                     <tbody>    
@@ -54,12 +60,14 @@
                                                 <td>{{ $item->path }}</td>
                                                 <td>{{ $item->linktype }}</td>
 
-                                                <td>{{ (bool) $item->active ? 'ใช่' : 'ไม่ใช่' }}</td>
+                                                <td>{{ (bool) $item->active ? __('WocAdmin.yes') : __('WocAdmin.No') }}</td>
                                                 <td>
-                                                    <a class="btn btn-sm btn-info" href="{{ route('menu.edit', ['id' => $item->id]) }}"> แก้ไข </a>
-                                                    {!! Form::open(['method' => 'DELETE', 'route' => ['menu.destroy', $item->id],'style'=>'display:inline' ]) !!}
-                                                        {{ Form::button('ลบข้อมูล', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger'] )  }}
-                                                    {!! Form::close() !!}
+                                                    <div class="btn-group">
+                                                        <a class="btn btn-primary" href="{{ route('menu.edit',$item->id) }}"><i class="fa fa-lg fa-edit"></i></a>
+                                                        {!! Form::open(['method' => 'DELETE','route' => ['menu.destroy', $item->id],'style'=>'display:inline']) !!}
+                                                            {!! Form::button('<i class="fa fa-lg fa-trash"></i>', ['class'=>'btn btn-danger', 'type'=>'submit']) !!}
+                                                        {!! Form::close() !!}
+                                                    </div>
                                                 </td>
                                             </tr>
                                         @endforeach

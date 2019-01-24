@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.settings');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -9,7 +15,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <a href="{{ route('setting.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> Add setting</a>
+                    <a href="{{ route('setting.create') }}" class="btn btn-success"><i class="fa fa-plus"></i> {{ __('WocAdmin.addSetting') }} </a>
                 </div>
 
                 <div class="card-header p-2">
@@ -35,11 +41,11 @@
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>
-                                        <th>No</th>
-                                        <th>Key</th>
-                                        <th>Value</th>
-                                        <th>type</th>
-                                        <th>Action</th>
+                                        <th> {{ __('WocAdmin.No') }} </th>
+                                        <th> {{ __('WocAdmin.Key') }} </th>
+                                        <th> {{ __('WocAdmin.Value') }} </th>
+                                        <th> {{ __('WocAdmin.type') }} </th>
+                                        <th> {{ __('WocAdmin.Action') }} </th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -52,10 +58,12 @@
                                             <td>{{ $setting->display_name }}</td>
                                             <td>{{ $setting->type }}</td>
                                             <td>
-                                                <a href="{{ route('setting.edit', $setting->id) }}" class="btn btn-primary"><i class="fa fa-cog"></i> edit</a>
-                                                {!! Form::open(['method' => 'DELETE','route' => ['setting.destroy', $setting->id],'style'=>'display:inline']) !!}
-                                                    {{ Form::button('<i class="fa fa-trash"></i>  Delete', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
-                                                {!! Form::close() !!}
+                                                <div class="btn-group pull-right">
+                                                    <a class="btn btn-info" href="{{ route('setting.edit', $setting->id) }}"><i class="fa fa-lg fa-edit"></i></a>
+                                                    {!! Form::open(['method' => 'DELETE','route' => ['setting.destroy', $setting->id],'style'=>'display:inline']) !!}
+                                                        {{ Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger'] )  }}
+                                                    {!! Form::close() !!}
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

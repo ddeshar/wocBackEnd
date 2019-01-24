@@ -1,25 +1,29 @@
 @extends('backend._layouts.master')
 
-@section('title', '')
+@php
+    $title = __('WocBread.categories');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-title-w-btn">
-                    <h3 class="title">categories</h3>
-                    <p><a class="btn btn-primary icon-btn" href="{{ route('categories.create') }}"><i class="fa fa-plus"></i>Add categories</a></p>
+                    <h3 class="title"> {{ __('WocAdmin.categories') }} </h3>
+                    <p><a class="btn btn-primary icon-btn" href="{{ route('categories.create') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.addCat') }} </a></p>
                 </div>
 
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead>
                             <tr>
-                                <th>id</th>
-                                <th>order</th>
-                                <th>name</th>
-                                <th>slug</th>
-                                <th>Actions</th>
+                                <th> {{ __('WocAdmin.No') }} </th>
+                                <th> {{ __('WocAdmin.order') }} </th>
+                                <th> {{ __('WocAdmin.Name') }} </th>
+                                <th> {{ __('WocAdmin.slug') }} </th>
+                                <th> {{ __('WocAdmin.Action') }} </th>
                             </tr>
                         </thead>
                         <tbody>
