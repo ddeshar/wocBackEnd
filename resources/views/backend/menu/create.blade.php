@@ -1,5 +1,15 @@
 @extends('backend._layouts.master')
 
+@php
+    if(isset($item)){
+        $title = __('WocBread.menuEdit');
+    } else{
+        $title = __('WocBread.menuCreate');
+    }
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 <?php
     $active = [

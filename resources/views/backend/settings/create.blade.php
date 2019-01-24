@@ -1,8 +1,10 @@
 @extends('backend._layouts.master')
     
-<?php $title = 'Create - Setting'; ?>
+@php
+    $title = __('WocBread.settingCreate');
+@endphp
 
-@section('title', $title.' | E-Filing  Backend')
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 
 @section('content')
