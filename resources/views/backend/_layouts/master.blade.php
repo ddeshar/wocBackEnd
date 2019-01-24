@@ -13,13 +13,28 @@
     <meta property="og:url" content="http://ddeshar.com.np/">
     <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
     <meta property="og:description" content="Test">
-    <title>WOC - Wame On Code</title>
+    <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700" rel="stylesheet">
+
+    <style>
+      .backHeader{
+        font-size: 1.2rem;
+        font-family: Kanit;
+        text-align: center;
+        padding: 5px;
+        margin-bottom: 0;
+      }
+      .nav-link {
+        font-family: Kanit;
+      }
+    </style>
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     @yield('header_styles')

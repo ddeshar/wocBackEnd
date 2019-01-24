@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.users');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -8,18 +14,18 @@
     <div class="col-md-12">
         <div class="tile">
             <div class="tile-title-w-btn">
-                <h3 class="title">Users Management</h3>
-                <p><a class="btn btn-primary icon-btn" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>Create New User</a></p>
+                <h3 class="title">{{ __('WocAdmin.userManage') }}</h3>
+                <p><a class="btn btn-primary icon-btn" href="{{ route('users.create') }}"><i class="fa fa-plus"></i>{{ __('WocAdmin.CreateUser') }}</a></p>
             </div>
             <div class="tile-body">
                 <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Roles</th>
-                        <th>Action</th>
+                        <th>{{ __('WocAdmin.No') }}</th>
+                        <th>{{ __('WocAdmin.Name') }}</th>
+                        <th>{{ __('WocAdmin.Email') }}</th>
+                        <th>{{ __('WocAdmin.Roles') }}</th>
+                        <th>{{ __('WocAdmin.Action') }}</th>
                     </tr>
                     </thead>
                     <tbody>

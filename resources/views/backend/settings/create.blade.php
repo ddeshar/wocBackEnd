@@ -1,8 +1,10 @@
 @extends('backend._layouts.master')
     
-<?php $title = 'Create - Setting'; ?>
+@php
+    $title = __('WocBread.settingCreate');
+@endphp
 
-@section('title', $title.' | E-Filing  Backend')
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 
 @section('content')
@@ -30,19 +32,19 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-3 form-group">
-                                {!! Form::label('display_name', 'Name') !!}
-                                {!! Form::text('display_name', null, ['class' => 'form-control', 'id' => 'display_name', 'placeholder' => 'Setting name ex:Admin Title']) !!}
+                                {!! Form::label('display_name', __('WocAdmin.Name')) !!}
+                                {!! Form::text('display_name', null, ['class' => 'form-control', 'id' => 'display_name', 'placeholder' => __('WocAdmin.settingName')]) !!}
                             </div>
                             <div class="col-md-3 form-group">
-                                {!! Form::label('key', 'Key') !!}
-                                {!! Form::text('key', null, ['class' => 'form-control', 'id' => 'key', 'placeholder' => 'Setting key ex:admin_title']) !!}
+                                {!! Form::label('key', __('WocAdmin.Key')) !!}
+                                {!! Form::text('key', null, ['class' => 'form-control', 'id' => 'key', 'placeholder' => __('WocAdmin.settingKey')]) !!}
                             </div>
                             <div class="col-md-3 form-group">
-                                {!! Form::label('type', 'Type') !!}
-                                {!! Form::select('type', $type, $settings->type, ['class' => 'form-control', 'id' => 'type']) !!}
+                                {!! Form::label('type', __('WocAdmin.type')) !!}
+                                {!! Form::select('type', $type, $settings->type, ['class' => 'form-control', 'id' => __('WocAdmin.type')]) !!}
                             </div>
                             <div class="col-md-3 form-group">
-                                {!! Form::label('group', 'Group') !!}
+                                {!! Form::label('group', __('WocAdmin.group')) !!}
                                 <select class="form-control group_select group_select_new" name="group">
                                     @foreach($groups as $group)
                                         <option value="{{ $group }}">{{ $group }}</option>
@@ -52,7 +54,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        {!! Form::submit('Submit', ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+                        {!! Form::submit(__('WocAdmin.Submit'), ['class' => 'btn btn-primary btn-lg btn-block']) !!}
                     </div>
                 </div>
             </div>

@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.rolesEdit');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -7,7 +13,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="tile">
-            <h3 class="tile-title">Edit ROles</h3>
+            <h3 class="tile-title"> {{ __('WocAdmin.editRoles') }} </h3>
             {!! Form::model($role, ['method' => 'PATCH','route' => ['roles.update', $role->id]]) !!}
                 @include('backend.roles._form')
             {!! Form::close() !!}

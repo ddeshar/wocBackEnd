@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.permissions');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -8,17 +14,17 @@
     <div class="col-md-12">
         <div class="tile">
             <div class="tile-title-w-btn">
-                <h3 class="title">Available Permissions</h3>
-                <p><a class="btn btn-primary icon-btn" href="{{ route('users.index') }}"><i class="fa fa-plus"></i>Users</a>
-                <a class="btn btn-primary icon-btn" href="{{ route('roles.index') }}"><i class="fa fa-plus"></i>Roles</a>
-                <a class="btn btn-primary icon-btn" href="{{ route('permissions.create') }}"><i class="fa fa-plus"></i>Create New Permission</a></p>
+                <h3 class="title"> {{ __('WocAdmin.AvlPer') }} </h3>
+                <p><a class="btn btn-primary icon-btn" href="{{ route('users.index') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.users') }} </a>
+                <a class="btn btn-primary icon-btn" href="{{ route('roles.index') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.Roles') }} </a>
+                <a class="btn btn-primary icon-btn" href="{{ route('permissions.create') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.CreatePer') }} </a></p>
             </div>
             <div class="tile-body">
                 <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
                     <tr>
-                        <th>Permissions</th>
-                        <th>Operation</th>
+                        <th> {{ __('WocAdmin.Permissions') }} </th>
+                        <th> {{ __('WocAdmin.Operation') }} </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -27,12 +33,12 @@
                         <tr>
                             <td>{{ $permission->name }}</td> 
                             <td>
-                            <a href="{{ route('permissions.edit',$permission->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-
-                            {!! Form::open(['method' => 'DELETE', 'route' => ['permissions.destroy', $permission->id] ]) !!}
-                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                            {!! Form::close() !!}
-
+                                <div class="btn-group">
+                                    <a class="btn btn-primary" href="{{ route('permissions.edit',$permission->id) }}"><i class="fa fa-lg fa-edit"></i></a>
+                                    {!! Form::open(['method' => 'DELETE','route' => ['permissions.destroy', $permission->id],'style'=>'display:inline']) !!}
+                                        {!! Form::button('<i class="fa fa-lg fa-trash"></i>', ['class'=>'btn btn-danger', 'type'=>'submit']) !!}
+                                    {!! Form::close() !!}
+                                </div>
                             </td>
                         </tr>
                     @endforeach

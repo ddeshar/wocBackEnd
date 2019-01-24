@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.roles');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -8,18 +14,18 @@
     <div class="col-md-12">
         <div class="tile">
             <div class="tile-title-w-btn">
-                <h3 class="title">Role Management</h3>
+                <h3 class="title"> {{ __('WocAdmin.roleManage') }} </h3>
                 @can('role-create')
-                <p><a class="btn btn-primary icon-btn" href="{{ route('roles.create') }}"><i class="fa fa-plus"></i>Create New Role</a></p>
+                <p><a class="btn btn-primary icon-btn" href="{{ route('roles.create') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.createRoles') }} </a></p>
                 @endcan
             </div>
             <div class="tile-body">
                 <table class="table table-hover table-bordered" id="sampleTable">
                     <thead>
                     <tr>
-                        <th>No</th>
-                        <th>Name</th>
-                        <th width="280px">Action</th>
+                        <th> {{ __('WocAdmin.No') }} </th>
+                        <th> {{ __('WocAdmin.Name') }} </th>
+                        <th width="280px"> {{ __('WocAdmin.Action') }} </th>
                     </tr>
                     </thead>
                     <tbody>
@@ -29,15 +35,17 @@
                             <td>{{ ++$i }}</td>
                             <td>{{ $role->name }}</td>
                             <td>
-                                <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}">Show</a>
-                                @can('role-edit')
-                                    <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}">Edit</a>
-                                @endcan
-                                @can('role-delete')
-                                    {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
-                                        {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
-                                    {!! Form::close() !!}
-                                @endcan
+                                <div class="btn-group">
+                                    <a class="btn btn-info" href="{{ route('roles.show',$role->id) }}"><i class="fa fa-lg fa-eye"></i></a>
+                                    @can('role-edit')
+                                        <a class="btn btn-primary" href="{{ route('roles.edit',$role->id) }}"><i class="fa fa-lg fa-edit"></i></a>
+                                    @endcan
+                                    @can('role-delete')
+                                        {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
+                                            {!! Form::button('<i class="fa fa-lg fa-trash"></i>', ['class'=>'btn btn-danger', 'type'=>'submit']) !!}
+                                        {!! Form::close() !!}
+                                    @endcan
+                                </div>
                             </td>
                         </tr>
                     @endforeach

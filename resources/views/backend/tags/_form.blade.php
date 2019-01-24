@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-12">
         <div class="tile">
-            <h3 class="tile-title">Tags</h3>
+            <h3 class="tile-title">{{ __('WocAdmin.tag') }}</h3>
             <div class="tile-body">
                 <div class="form-group">
                     {!! Form::label('tag', 'tag') !!}
-                    {!! Form::text('tag', $datas->tag, ['class' => 'form-control', 'id' => 'tag', 'placeholder' => 'tag']) !!}
+                    {!! Form::text('tag', $datas->tag, ['class' => 'form-control', 'id' => 'tag', 'placeholder' => __('WocAdmin.tag')]) !!}
                 </div>
             </div>
 

@@ -1,5 +1,11 @@
 @extends('backend._layouts.master')
 
+@php
+    $title = __('WocBread.rolesCreate');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
 @section('content')
 
     @include('backend._layouts._partial.messages._messages')
@@ -7,7 +13,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="tile">
-            <h3 class="tile-title">Create New Roles</h3>
+            <h3 class="tile-title"> {{ __('WocAdmin.createRoles') }} </h3>
             {!! Form::open(['route' => 'roles.store','method'=>'POST']) !!}
                 @include('backend.roles._form')
             {!! Form::close() !!}
