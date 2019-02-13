@@ -23,8 +23,8 @@ Route::get('/', function () {
     $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 
     // Registration Routes...
-    $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    $this->post('register', 'Auth\RegisterController@register');
+    // $this->get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    // $this->post('register', 'Auth\RegisterController@register');
 
     // Password Reset Routes...
     $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -36,8 +36,6 @@ Route::get('/', function () {
     Route::group([
         'prefix' => 'admin',
         'middleware' => 'auth'
-        // ,
-        // 'as' => 'admin.'
         ], function() {
         
         Route::get('/', 'HomeController@index')->name('admin');
@@ -52,11 +50,7 @@ Route::get('/', function () {
             'posts'          =>    'Backend\PostsController',
             'pages'          =>    'Backend\PagesController',
             'setting'        =>    'Backend\SettingsController',
-            'categories'     =>    'Backend\CategoriesController',
-            'tags'           =>    'Backend\TagsController' 
+            'categories'     =>    'Backend\CategoriesController'
           ]);
-
-        // For Json Encode
-        Route::get('json-menu/{id}', 'MenuController@getGroupname')->name('jsonmenuid');
 
     });

@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Backend;
 use DB;
 use Auth;
 use App\Models\Posts;
-use App\Models\Tags;
 use App\Models\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -30,11 +29,9 @@ class PostsController extends Controller{
     public function create(){
 
         $datas = new Posts;
-        $tag = Tags::all();
         $categories = Categories::all()->pluck('name','id');
-        $tags = Tags::all()->pluck('tag','id');
 
-        return view('backend.posts.create', compact('datas','categories','tags','tag'));
+        return view('backend.posts.create', compact('datas','categories'));
     }
 
     /**
@@ -50,7 +47,6 @@ class PostsController extends Controller{
             $input['author_id'] = Auth::user()->id;  // ถ้าใช้ auth::user  ต้อง use auth;
         }
         $post = Posts::create($input);
-        $post->Tags()->attach($request->tags);
         $post->save();
 
         return redirect()->route('posts.index')->with('Success','Posts Create Successfully');  
@@ -80,13 +76,8 @@ class PostsController extends Controller{
         $datas = Posts::where('slug', $id)->firstorfail();
 
         $categories = Categories::all()->pluck('name','id');
-        $tags = Tags::all()->pluck('tag','id');
-        
-        $postTags = $datas->tags->pluck('id','id')->all();
 
-        // dd($postTags);
-        
-        return view('backend.posts.edit', compact('datas','categories','tags','postTags'));
+        return view('backend.posts.edit', compact('datas','categories'));
     }
 
     /**
@@ -104,7 +95,6 @@ class PostsController extends Controller{
             $input['author_id'] = Auth::user()->id;  // ถ้าใช้ auth::user  ต้อง use auth;
         }
         $post->update($input);
-        $post->Tags()->sync($request->tags);
         $post->save();
 
 

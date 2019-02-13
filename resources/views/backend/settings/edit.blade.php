@@ -11,10 +11,7 @@
 
 @section('header_styles')
 
-<script src="https://cdn.alloyui.com/3.0.1/aui/aui-min.js"></script>
-<!-- <link href="https://cdn.alloyui.com/3.0.1/aui-css/css/bootstrap.min.css" rel="stylesheet"></link> -->
-
-<link rel="stylesheet" href="{!! url('/plugins/datetimepicker/bootstrap-datetimepicker.css') !!}">
+<link rel="stylesheet" href="{!! url('backend/plugins/datetimepicker/bootstrap-datetimepicker.css') !!}">
 @endsection
 
 @section('content')
@@ -85,8 +82,8 @@
 
 
     <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js')}} "></script>
-    <script src="{!! url('plugins/datetimepicker/bootstrap-datetimepicker.js') !!}"></script>
-    <script src="{!! url('vendor/laravel-filemanager/js/stand-alone-button.js') !!}"></script>
+    <script src="{!! url('backend/plugins/datetimepicker/bootstrap-datetimepicker.js') !!}"></script>
+    <script src="{!! url('backend/vendor/laravel-filemanager/js/stand-alone-button.js') !!}"></script>
     <script>
         $('#img1').filemanager('image');
         $('#img2').filemanager('image');    
