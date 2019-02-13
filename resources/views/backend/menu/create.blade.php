@@ -185,7 +185,7 @@
 @endsection
 
 @section('footer_scripts')
-<script src="{!! url('vendor/laravel-filemanager/js/lfm.js') !!}"></script>
+<script src="{!! url('backend/vendor/laravel-filemanager/js/lfm.js') !!}"></script>
     <script> 
         $('#iconimg').filemanager('image');
     </script>

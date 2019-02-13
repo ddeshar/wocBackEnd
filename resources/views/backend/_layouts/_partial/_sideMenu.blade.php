@@ -7,24 +7,23 @@
         </div>
     </div>
     <ul class="app-menu">
-        <!-- <li><a class="app-menu__item active" href="{{ url('/') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">Pages</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li><a class="app-menu__item" href="{{ url('admin/') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">posts</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
-                <li><a class="treeview-item" href="{{ url('/') }}"><i class="icon fa fa-circle-o"></i> Blank Page</a></li>
-                <li><a class="treeview-item" href="{{ url('/') }}"><i class="icon fa fa-circle-o"></i> Login Page</a></li>
-                <li><a class="treeview-item" href="{{ url('/') }}"><i class="icon fa fa-circle-o"></i> Lockscreen Page</a></li>
-                <li><a class="treeview-item" href="{{ url('/') }}"><i class="icon fa fa-circle-o"></i> User Page</a></li>
+                <li><a class="treeview-item" href="{{ url('admin/posts') }}"><i class="icon fa fa-circle-o"></i> posts</a></li>
+                <li><a class="treeview-item" href="{{ url('admin/categories') }}"><i class="icon fa fa-circle-o"></i> categories</a></li>
             </ul>
-        </li> -->
-
-        @foreach(Wocmenu::GenerateMenu(1) as $key => $category)
-            <li><a class="app-menu__item" href="{{ url('admin/'. $category->path ) }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">{{ $category->title }}</span></a>
-                <!-- @if(count($category->childs))
-                    @include('backend._layouts._includes.manageChild',['childs' => $category->childs])
-                @endif -->
-            </li>
-        @endforeach
-
-
+        </li>
+        <li><a class="app-menu__item" href="{{ url('admin/banners') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">banner</span></a></li>
+        <li><a class="app-menu__item" href="{{ url('admin/pages') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">pages</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">users</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <ul class="treeview-menu">
+                <li><a class="treeview-item" href="{{ url('admin/users') }}"><i class="icon fa fa-circle-o"></i> users</a></li>
+                <li><a class="treeview-item" href="{{ url('admin/roles') }}"><i class="icon fa fa-circle-o"></i> roles</a></li>
+                <li><a class="treeview-item" href="{{ url('admin/permissions') }}"><i class="icon fa fa-circle-o"></i> permissions</a></li>
+            </ul>
+        </li>
+        <li><a class="app-menu__item" href="{{ url('admin/members') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">members</span></a></li>
+        <li><a class="app-menu__item" href="{{ url('admin/setting') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">setting</span></a></li>
     </ul>
 </aside>

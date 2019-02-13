@@ -11,19 +11,32 @@
     <meta property="og:site_name" content="Wame On Code">
     <meta property="og:title" content="WOC - Wame On Code">
     <meta property="og:url" content="http://ddeshar.com.np/">
-    <meta property="og:image" content="http://pratikborsadiya.in/blog/vali-admin/hero-social.png">
+    <meta property="og:image" content="http://ddeshar.com.np/assets/images/newa.png">
     <meta property="og:description" content="Test">
     <title>@yield('title')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Main CSS-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/card.css') }}">
-    <!-- Google Font: Source Sans Pro -->
-    <link href="https://fonts.googleapis.com/css?family=Kanit:300,400,400i,700" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/css/card.css') }}">
+    <!-- Google Font: Source Sans Pro -->
     <style>
+      /* kanit-regular - thai */
+      @font-face {
+        font-family: 'Kanit';
+        font-style: normal;
+        font-weight: 400;
+        src: url('{{ asset('backend/fonts/kanit-v3-thai-regular.eot') }}'); /* IE9 Compat Modes */
+        src: local('Kanit Regular'), local('Kanit-Regular'),
+            url('{{ asset('backend/fonts/kanit-v3-thai-regular.eot?#iefix') }}') format('embedded-opentype'), /* IE6-IE8 */
+            url('{{ asset('backend/fonts/kanit-v3-thai-regular.woff2') }}') format('woff2'), /* Super Modern Browsers */
+            url('{{ asset('backend/fonts/kanit-v3-thai-regular.woff') }}') format('woff'), /* Modern Browsers */
+            url('{{ asset('backend/fonts/kanit-v3-thai-regular.ttf') }}') format('truetype'), /* Safari, Android, iOS */
+            url('{{ asset('backend/fonts/kanit-v3-thai-regular.svg#Kanit') }}') format('svg'); /* Legacy iOS */
+      }
+
       .backHeader{
         font-size: 1.2rem;
         font-family: Kanit;
@@ -34,9 +47,14 @@
       .nav-link {
         font-family: Kanit;
       }
+      h1, h2, h3, h4, h5, h6, label, button, .nav-link, .btn, th,span {
+          font-family: 'Kanit' !important;
+      }
+
     </style>
+
     <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/font-awesome-4.7.0/css/font-awesome.min.css') }}">
     @yield('header_styles')
   </head>
   <body class="app sidebar-mini rtl">
@@ -52,24 +70,13 @@
 
     </main>
     <!-- Essential javascripts for application to work-->
-    <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/main.js') }}"></script>
+    <script src="{{ asset('backend/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ asset('backend/js/popper.min.js') }}"></script>
+    <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('backend/js/main.js') }}"></script>
     <!-- The javascript plugin to display page loading on top-->
-    <script src="{{ asset('js/plugins/pace.min.js') }}"></script>
+    <script src="{{ asset('backend/js/plugins/pace.min.js') }}"></script>
     <!-- Page specific javascripts-->
     @yield('footer_scripts')
-    <!-- Google analytics script-->
-    <script type="text/javascript">
-      if(document.location.hostname == 'pratikborsadiya.in') {
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-72504830-1', 'auto');
-        ga('send', 'pageview');
-      }
-    </script>
   </body>
 </html>

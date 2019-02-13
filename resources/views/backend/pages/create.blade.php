@@ -7,7 +7,7 @@
 @section('title', $title .' | '. __('WocBread.WocAdmin') )
 
 @section('header_styles')
-<link rel="stylesheet" href="{!! url('/plugins/datetimepicker/bootstrap-datetimepicker.css') !!}">
+<link rel="stylesheet" href="{!! url('backend/plugins/datetimepicker/bootstrap-datetimepicker.css') !!}">
 @endsection
 
 @section('content')
@@ -22,8 +22,8 @@
 
 @section('footer_scripts')
     <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js')}} "></script>
-    <script src="{!! url('plugins/datetimepicker/bootstrap-datetimepicker.js') !!}"></script>
-    <script src="{!! url('vendor/laravel-filemanager/js/lfm.js') !!}"></script>
+    <script src="{!! url('backend/plugins/datetimepicker/bootstrap-datetimepicker.js') !!}"></script>
+    <script src="{!! url('backend/vendor/laravel-filemanager/js/lfm.js') !!}"></script>
     <script>
         $('#lfm').filemanager('image');
         $('#mob').filemanager('image');
