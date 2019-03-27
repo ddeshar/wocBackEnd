@@ -1,12 +1,20 @@
-    <script src="{!! url('plugins/ckeditor/ckeditor.js') !!}"></script>
-    <script src="{!! url('plugins/ckeditor/config.js') !!}"></script>
+    <script src="{!! url('backend/plugins/ckeditor/ckeditor.js') !!}"></script>
+    <script src="{!! url('backend/plugins/ckeditor/config.js') !!}"></script>
 
     <script>
+        var  toolbar =  [{
+                            name: 'WOC',
+                            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting','RemoveFormat','-','Maximize', 'ShowBlocks', 'Source']
+                        }]
+            
+        CKEDITOR.replace( 'metaDescription',   {toolbar  });
+        CKEDITOR.replace( 'metaKeywords',  {toolbar });
+
     	var options = {
-            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images', 
-            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}', 
-            filebrowserBrowseUrl: '/laravel-filemanager?type=Files', 
-            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}' 
+            filebrowserImageBrowseUrl:  '/laravel-filemanager?type=Images', 
+            filebrowserImageUploadUrl:  '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}', 
+            filebrowserBrowseUrl:       '/laravel-filemanager?type=Files', 
+            filebrowserUploadUrl:       '/laravel-filemanager/upload?type=Files&_token={{csrf_token()}}' 
         };
 
         var  toolbar =  [{
@@ -63,6 +71,10 @@
                     ]
         
         CKEDITOR.replace('newa', options, {
+            toolbar
+        });
+
+        CKEDITOR.replace('excerpt', options, {
             toolbar
         });
 

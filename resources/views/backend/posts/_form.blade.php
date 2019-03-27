@@ -57,11 +57,6 @@
                     <div class="tab-pane" id="SEO">
 
                         <div class="form-group">
-                            {!! Form::label('metaTitle', __('WocAdmin.seoTitle')) !!}
-                            {!! Form::text('metaTitle', $datas->metaTitle , ['class' => 'form-control', 'id' => 'metaTitle', 'placeholder' => __('WocAdmin.seoTitle')]) !!}
-                        </div>
-
-                        <div class="form-group">
                             {!! Form::label('metaDescription', __('WocAdmin.metaDes')) !!}
                             {!! Form::textarea('metaDescription', $datas->metaDescription , ['class' => 'form-control', 'rows'=>'5']); !!}
                         </div>
@@ -103,11 +98,6 @@
                 <div class="form-group">
                     {!! Form::label('category_id', __('WocAdmin.postCat')) !!}
                     {!! Form::select('category_id', $categories, $datas->category_id, ['class' => 'form-control', 'id' => 'select']); !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::label('tags', __('WocAdmin.selectTags'), ['class' => 'control-label']) !!}
-                    {!! Form::select('tags[]', $tags, isset($postTags) ? $postTags : [], ['class' => 'form-control','id' => 'demoSelect', 'multiple','tabindex'=>'-1', 'aria-hidden'=>'true']) !!}
                 </div>
             </div>
         
