@@ -1,13 +1,15 @@
-    <script src="{!! url('plugins/ckeditor/ckeditor.js') !!}"></script>
-    <script src="{!! url('plugins/ckeditor/config.js') !!}"></script>
+    <script src="{!! url('backend/plugins/ckeditor/ckeditor.js') !!}"></script>
+    <script src="{!! url('backend/plugins/ckeditor/config.js') !!}"></script>
 
     <script>
-
+        var  toolbar =  [{
+                            name: 'WOC',
+                            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting','RemoveFormat','-','Maximize', 'ShowBlocks', 'Source']
+                        }]
             
+        CKEDITOR.replace( 'metaDescription',   {toolbar  });
+        CKEDITOR.replace( 'metaKeywords',  {toolbar });
 
-    </script>
-
-    <script>
     	var options = {
             filebrowserImageBrowseUrl:  '/laravel-filemanager?type=Images', 
             filebrowserImageUploadUrl:  '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}', 
@@ -67,10 +69,6 @@
                             items: ['About']
                         }
                     ]
-        var  test =  [{
-                    name: 'WOC',
-                    items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting','RemoveFormat','-','Maximize', 'ShowBlocks', 'Source']
-        }]
         
         CKEDITOR.replace('newa', options, {
             toolbar
@@ -78,13 +76,6 @@
 
         CKEDITOR.replace('excerpt', options, {
             toolbar
-        });
-
-        CKEDITOR.replace( 'metaDescription',{
-            test
-        });
-        CKEDITOR.replace( 'metaKeywords',{
-            test 
         });
 
     </script>
