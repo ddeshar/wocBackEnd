@@ -18,7 +18,12 @@
                             {!! Form::label('title', __('WocAdmin.title'), ['class' => 'control-label']) !!}
                             {!! Form::text('title', $datas->title,  ['class' => 'form-control', 'id' => 'title', 'placeholder' => __('WocAdmin.title'),'required' => 'required']) !!}
                         </div>
-                        
+
+                        <div class="form-group">
+                            {!! Form::label('excerpt', __('WocAdmin.excerpt'), ['class' => 'control-label']) !!}
+                            {!! Form::textarea('excerpt',  isset($datas->excerpt) ? $datas->excerpt : null, ['class' => 'form-control', 'id' => 'excerpt', 'rows' => '14']); !!}
+                        </div>
+
                         <div class="form-group">
                             {!! Form::label('body', __('WocAdmin.description'), ['class' => 'control-label']) !!}
                             {!! Form::textarea('body',  isset($datas->body) ? $datas->body : null, ['class' => 'form-control', 'id' => 'newa', 'rows' => '14']); !!}
@@ -87,18 +92,13 @@
                     <div class="tab-pane" id="SEO">
 
                         <div class="form-group">
-                            {!! Form::label('metaTitle', __('WocAdmin.seoTitle')) !!}
-                            {!! Form::text('metaTitle', $datas->metaTitle , ['class' => 'form-control', 'id' => 'metaTitle', 'placeholder' => __('WocAdmin.seoTitle')]) !!}
-                        </div>
-
-                        <div class="form-group">
                             {!! Form::label('metaDescription', __('WocAdmin.metaDes')) !!}
-                            {!! Form::textarea('metaDescription', $datas->metaDescription , ['class' => 'form-control', 'rows'=>'5']); !!}
+                            {!! Form::textarea('metaDescription',  isset($datas->metaDescription) ? $datas->metaDescription : null, ['class' => 'form-control', 'id' => 'metaDescription', 'rows' => '14']); !!}
                         </div>
 
                         <div class="form-group">
                             {!! Form::label('metaKeywords', __('WocAdmin.metaKey')) !!}
-                            {!! Form::textarea('metaKeywords', $datas->metaKeywords , ['class' => 'form-control', 'rows'=>'5']); !!}
+                            {!! Form::textarea('metaKeywords',  isset($datas->metaKeywords) ? $datas->metaKeywords : null, ['class' => 'form-control', 'id' => 'metaKeywords', 'rows' => '14']); !!}
                         </div>
 
                     </div>
