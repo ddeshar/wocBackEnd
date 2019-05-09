@@ -8,15 +8,13 @@ use DummyRootNamespaceHttp\Controllers\Controller;
 use DummyRootNamespace{{modelNamespace}}{{modelName}};
 use Illuminate\Http\Request;
 
-class DummyClass extends Controller
-{
+class DummyClass extends Controller{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
-    {
+    public function index(Request $request){
         ${{crudName}} = {{modelName}}::latest()->paginate({{pagination}});
 
         return ${{crudName}};
@@ -29,8 +27,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         {{validationRules}}
         ${{crudNameSingular}} = {{modelName}}::create($request->all());
 
@@ -44,8 +41,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id){
         ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
         return ${{crudNameSingular}};
@@ -59,8 +55,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         {{validationRules}}
         ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
         ${{crudNameSingular}}->update($request->all());
@@ -75,8 +70,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id){
         {{modelName}}::destroy($id);
 
         return response()->json(null, 204);
