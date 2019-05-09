@@ -1,7 +1,7 @@
 @extends('backend._layouts.master')
 
     @php
-        $title = __('WocBread.Show%%modelName%%').' '.{{ $%%crudNameSingular%%->%%primaryKey%% }};
+        $title = __('WocBread.Show%%modelName%%').' '.$%%crudNameSingular%%->%%primaryKey%%;
     @endphp
 
     @section('title', $title .' | '. __('WocBread.WocAdmin') )

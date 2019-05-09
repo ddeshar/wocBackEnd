@@ -8,23 +8,15 @@ use DummyRootNamespaceHttp\Controllers\Controller;
 use DummyRootNamespace{{modelNamespace}}{{modelName}};
 use Illuminate\Http\Request;
 
-class DummyClass extends Controller
-{
+class DummyClass extends Controller{
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\View\View
      */
-    public function index(Request $request)
-    {
-        $keyword = $request->get('search');
-        $perPage = {{pagination}};
-
-        if (!empty($keyword)) {
-            ${{crudName}} = {{modelName}}::{{whereSnippet}}latest()->paginate($perPage);
-        } else {
-            ${{crudName}} = {{modelName}}::latest()->paginate($perPage);
-        }
+    public function index(Request $request){
+        
+        ${{crudName}} = {{modelName}}::all();
 
         return view('{{viewPath}}{{viewName}}.index', compact('{{crudName}}'));
     }
@@ -34,8 +26,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function create()
-    {
+    public function create(){
         return view('{{viewPath}}{{viewName}}.create');
     }
 
@@ -46,8 +37,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
         {{validationRules}}
         $requestData = $request->all();
         {{fileSnippet}}
@@ -63,8 +53,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function show($id)
-    {
+    public function show($id){
         ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
         return view('{{viewPath}}{{viewName}}.show', compact('{{crudNameSingular}}'));
@@ -77,8 +66,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\View\View
      */
-    public function edit($id)
-    {
+    public function edit($id){
         ${{crudNameSingular}} = {{modelName}}::findOrFail($id);
 
         return view('{{viewPath}}{{viewName}}.edit', compact('{{crudNameSingular}}'));
@@ -92,8 +80,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
         {{validationRules}}
         $requestData = $request->all();
         {{fileSnippet}}
@@ -110,8 +97,7 @@ class DummyClass extends Controller
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function destroy($id)
-    {
+    public function destroy($id){
         {{modelName}}::destroy($id);
 
         return redirect('{{routeGroup}}{{viewName}}')->with('flash_message', '{{modelName}} deleted!');

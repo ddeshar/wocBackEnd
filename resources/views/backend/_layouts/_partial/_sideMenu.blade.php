@@ -24,6 +24,8 @@
             </ul>
         </li>
         <li><a class="app-menu__item" href="{{ url('admin/members') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">members</span></a></li>
-        <li><a class="app-menu__item" href="{{ url('admin/setting') }}"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">setting</span></a></li>
+        <hr>
+        <li><a class="app-menu__item" href="{{ url('admin/setting') }}"><i class="app-menu__icon fa fa-cog"></i><span class="app-menu__label">setting</span></a></li>
+        <li><a class="app-menu__item" href="{{ url('admin/generator') }}"><i class="app-menu__icon fa fa-refresh"></i><span class="app-menu__label">generator</span></a></li>
     </ul>
 </aside>
