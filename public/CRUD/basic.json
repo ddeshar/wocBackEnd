@@ -1,0 +1,59 @@
+{
+    "fields": [
+        {
+            "name": "title",
+            "type": "string"
+        },
+        {
+            "name": "content",
+            "type": "text"
+        },
+        {
+            "name": "category",
+            "type": "select",
+            "options": {
+                "technology": "Technology",
+                "tips": "Tips",
+                "health": "Health"
+            }
+        },
+        {
+            "name": "user_id",
+            "type": "integer#unsigned"
+        }
+    ],
+    "foreign_keys": [
+        {
+            "column": "user_id",
+            "references": "id",
+            "on": "users",
+            "onDelete": "cascade"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "user",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "title",
+            "rules": "required|max:10"
+        }
+    ]
+}
+
+
+/**
+    php artisan crud:generate Newa --fields='title#string; content#text; category#select#options={"technology": "Technology", "tips": "Tips", "health": "Health"}' --view-path=backend --controller-namespace=Backend --route-group=admin --form-helper=html
+
+    php artisan crud:generate Apple --fields_from_file="F:/_coding/framework/laravel/wocBackEnd/public/CRUD\basic.json" 
+    --view-path=backend 
+    --controller-namespace=Backend 
+    --model-namespace=Models 
+    --route-group=admin 
+    --locales=en 
+    --form-helper=html
+*/
