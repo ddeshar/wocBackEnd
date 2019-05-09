@@ -1,0 +1,60 @@
+@extends('backend._layouts.master')
+
+@php
+    $title = __('WocBread.%%crudNameCap%%');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
+@section('content')
+
+    @include('backend._layouts._partial.messages._messages')
+
+    <div class="row">
+        <div class="col-12">
+            <div class="tile">
+                <div class="tile-title-w-btn">
+                    <h3 class="title"> {{ __('WocAdmin.%%crudNameCap%%') }} </h3>
+                    <p><a class="btn btn-primary icon-btn" href="{{ url('/%%routeGroup%%%%viewName%%/create') }}"><i class="fa fa-plus"></i> {{ __('WocAdmin.create%%crudNameCap%%') }} </a></p>
+                </div>
+                <!-- /.card-header -->
+                <div class="tile-body">
+                    <table id="newaTable" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>%%formHeadingHtml%%<th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>                        
+                            @foreach($%%crudName%% as $item)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    %%formBodyHtml%%
+                                    <td>
+                                        <div class="btn-group">
+                                            <a class="btn btn-primary" title="View %%modelName%%" href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%%) }}"><i class="fa fa-lg fa-eye"></i></a>
+                                            <a class="btn btn-primary" href="{{ url('/%%routeGroup%%%%viewName%%/' . $item->%%primaryKey%% . '/edit') }}" title="Edit %%modelName%%"><i class="fa fa-lg fa-edit"></i></a>
+                                            <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%' . '/' . $item->%%primaryKey%%) }}" accept-charset="UTF-8" style="display:inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger" title="Delete %%modelName%%" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" ></i> </button>
+                                            </form>
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    </div>
+    
+@endsection
+@section('footer_scripts')
+    <!-- Data table plugin-->
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript">$('#newaTable').DataTable();</script>
+@endsection

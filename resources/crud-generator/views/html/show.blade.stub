@@ -1,0 +1,26 @@
+@extends('backend._layouts.master')
+
+    @php
+        $title = __('WocBread.Show%%modelName%%').' '.$%%crudNameSingular%%->%%primaryKey%%;
+    @endphp
+
+    @section('title', $title .' | '. __('WocBread.WocAdmin') )
+
+@section('content')
+    <div class="card card-success card-outline">
+        <div class="card-body box-profile">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>ID</th><td>{{ $%%crudNameSingular%%->%%primaryKey%% }}</td>
+                        </tr>
+                        %%formBodyHtmlForShowView%%
+                    </tbody>
+                </table>
+            </div>
+
+            <a href="{{ url('/%%routeGroup%%%%viewName%%/' . $%%crudNameSingular%%->%%primaryKey%% . '/edit') }}" class="btn btn-primary btn-block"><b>{{ __('WocAdmin.edit')}}</b></a>
+        </div>
+    </div>
+@endsection
