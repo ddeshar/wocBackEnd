@@ -2,14 +2,6 @@
     <script src="{!! url('backend/plugins/ckeditor/config.js') !!}"></script>
 
     <script>
-        var  toolbar =  [{
-                            name: 'WOC',
-                            items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting','RemoveFormat','-','Maximize', 'ShowBlocks', 'Source']
-                        }]
-            
-        CKEDITOR.replace( 'metaDescription',   {toolbar  });
-        CKEDITOR.replace( 'metaKeywords',  {toolbar });
-
     	var options = {
             filebrowserImageBrowseUrl:  '/laravel-filemanager?type=Images', 
             filebrowserImageUploadUrl:  '/laravel-filemanager/upload?type=Images&_token={{csrf_token()}}', 
@@ -70,12 +62,14 @@
                         }
                     ]
         
-        CKEDITOR.replace('newa', options, {
-            toolbar
-        });
+        CKEDITOR.replace('newa', options, {toolbar});
+        CKEDITOR.replace('excerpt', options, {toolbar});
 
-        CKEDITOR.replace('excerpt', options, {
-            toolbar
-        });
-
+        var  toolbar =  [{
+                    name: 'WOC',
+                    items: ['Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'CopyFormatting','RemoveFormat','-','Maximize', 'ShowBlocks', 'Source']
+                }]
+            
+        CKEDITOR.replace( 'metaDescription', {toolbar});
+        CKEDITOR.replace( 'metaKeywords', {toolbar});
     </script>

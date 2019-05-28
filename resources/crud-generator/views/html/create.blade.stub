@@ -1,0 +1,19 @@
+@extends('backend._layouts.master')
+
+@php
+    $title = __('WocBread.%%modelName%%Create');
+@endphp
+
+@section('title', $title .' | '. __('WocBread.WocAdmin') )
+
+@section('content')
+    @include('backend._layouts._partial.messages._messages')
+        <form method="POST" action="{{ url('/%%routeGroup%%%%viewName%%') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            @include ('%%viewTemplateDir%%.form', ['formMode' => 'create'])
+        </form>
+@endsection
+
+@section('footer_scripts')
+    @include('backend._layouts._partial.js._ckeditor')
+@endsection

@@ -38,4 +38,7 @@ Route::get('/', function () {
             'categories'     =>    'Backend\CategoriesController'
           ]);
 
+        Route::get('generator', ['uses' => 'Backend\ProcessController@getGenerator']);
+        Route::post('generator', ['uses' => 'Backend\ProcessController@postGenerator']);
+
     });

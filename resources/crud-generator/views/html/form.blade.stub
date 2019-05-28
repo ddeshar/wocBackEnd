@@ -1,0 +1,45 @@
+<div class="row">
+    @include('backend._layouts._partial.messages._alert')
+    <div class="col-md-9">
+        <div class="card">
+            <div class="card-header p-2">
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a class="nav-link active" href="#Description" data-toggle="tab"> {{ __('WocAdmin.description') }} </a></li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content">
+
+                    <div class="active tab-pane" id="Description">
+
+                        %%formFieldsHtml%%
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+
+        <div class="card card-primary card-outline">
+
+            <div class="card-header p-2">
+                <p class="backHeader"> {{ __('WocAdmin.setting') }} </p>
+            </div>
+                <div class="card-body">
+
+                    <!-- Card body for status and slugs -->
+
+                </div>
+        
+                <div class="card-footer">
+                    {!! Form::submit(__('WocAdmin.Submit'), ['class' => 'btn btn-primary btn-lg btn-block']) !!}
+                </div>
+
+        </div>
+
+    </div>
+
+</div>
