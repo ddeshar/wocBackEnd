@@ -3,6 +3,9 @@
 namespace App\Helpers;
 
 use DB;
+use Illuminate\Support\Facades\Route;
+use App\Models\Pages;
+
 class WocglobalClass{
     public static function bytesToHuman($bytes){
         $units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB'];
@@ -34,5 +37,40 @@ class WocglobalClass{
     public static function backStatus(){
         $status = DB::table("status")->pluck("deatil","id");
         return $status;
+    }
+
+    public static function RouteMenu(){
+        
+        $app = app();
+        $routes = $app->routes->getRoutes();
+        
+        $lists = [];
+
+        foreach($routes as $route){
+                $length = $route->uri;
+                $uri = explode("/", $length);
+
+                $restriUri = ["login", "logout", "register", "routes"];
+                $restriPrefix = ["/admin", "laravel-filemanager"];
+
+            if(!in_array($route->getPrefix(), $restriPrefix) && !in_array($length, $restriUri) && count($uri) < 2 ){
+                $data = $route->getName();
+                $lists[$data] = $data;
+
+                // $route->uri;
+                // $route->getName();
+                // $route->getPrefix();
+                // $route->getActionMethod();
+                
+            }
+        }
+
+        return $lists;
+    }
+
+    public static function pageMenu(){
+        $pages = Pages::pluck('title', 'slug');
+
+        return $pages;
     }
 }
