@@ -10,11 +10,25 @@
   <div class="row">
     <div class="col-md-12">
       <div class="tile">
-        <div class="tile-body">@lang('passwords.password') <h2>ทดสอบ</h2></div>
+        <div class="tile-body">@lang('passwords.password')
+        <h2>ทดสอบ</h2>
+        
+
+
+    {!! Menu::render() !!}
+
+
+
+        </div>
       </div>
     </div>
   </div>
 @endsection
+
+<!-- //YOU MUST HAVE JQUERY LOADED BEFORE menu scripts -->
+@push('scripts')
+    {!! Menu::scripts() !!}
+@endpush
 
 @section('footer_scripts')
 
