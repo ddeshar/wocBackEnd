@@ -54,7 +54,8 @@
     </style>
 
     <!-- Font-icon css-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ asset('backend/font-awesome-4.7.0/css/font-awesome.min.css') }}"> -->
+    <link href="{{ asset('fontawesome/css/all.css') }}" rel="stylesheet"> <!--load all styles -->
     @yield('header_styles')
   </head>
   <body class="app sidebar-mini rtl">
@@ -74,6 +75,7 @@
     <script src="{{ asset('backend/js/popper.min.js') }}"></script>
     <script src="{{ asset('backend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('backend/js/main.js') }}"></script>
+    @stack('scripts')
     <!-- The javascript plugin to display page loading on top-->
     <script src="{{ asset('backend/js/plugins/pace.min.js') }}"></script>
     <!-- Page specific javascripts-->
