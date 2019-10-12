@@ -213,7 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         
-        'Wocmenu' => App\Helpers\WocmenuClass::class,
+        // 'Wocmenu' => App\Helpers\WocmenuClass::class,
         'Wocglobal' => App\Helpers\WocglobalClass::class,
     ],
 
