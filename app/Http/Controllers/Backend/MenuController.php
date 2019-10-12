@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
-
-use Harimayco\Menu\Facades\Menu;
+use App\Facades\Menu;
 use Illuminate\Http\Request;
 // use App\Http\Requests;
 use App\Models\Menus;
